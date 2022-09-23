@@ -1,0 +1,71 @@
+﻿@page
+@model christmasinbelfast.Pages.CenterpieceModel
+
+
+<html>
+    <header>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="~/css/MyStyleSheet.css" />
+    </header>
+    <body>
+        <div style="background-image: url(../images/christmasBannerForNavCroppedNow.jpg);
+                    width: 100%">
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Wreaths">Wreaths</a></li>
+                    <li><a asp-page="/ContactUs">Contact Us</a></li>
+                    <li><a asp-page="/Basket">Basket</a></li>
+                </ul>
+            </nav>
+        </div>
+
+<div class="w3-row-padding w3-margin-top">
+    @foreach(var product in @Model.ProductsThatIncludeCenterpieces)
+        {
+      <div class="w3-third">
+        <div class="w3-card">
+          <img src="/images/index/@product.ImageURL" style="width:100%">
+          <div class="w3-container">
+@if(product.ProductName == "Luxury Centerpiece")
+                        {
+                            <h5 style="padding: 80px 0px 0px 0px;">@product.ProductName</h5>
+                        }
+                        else
+                        {
+                            <h5>@product.ProductName</h5>                            
+                        }
+            <p>Price: £@product.Price</p>
+                       <form method="post">
+                <input hidden id="ProductId" name="ProductId" 
+                asp-for="purchase.ProductId" value="@product.Id">
+                <label>Quantity:</label>
+                <input id="Quantity" name="Quantity" asp-for="purchase.Quantity" value="1">
+@if(Model.PurchaseList != null)
+                            {
+                                if(Model.LastAddedToBasket == product.Id)
+                                {
+                                    <p style="color: green">Added to Basket</p>
+                                }                                
+                            }
+                            <div style="padding: 20px 0px 0px 0px;">
+                                 <button class="btn btn-success" type="submit">Add To Basket</button>
+                            </div>
+            </form>
+            <br/>
+            <p>@product.Description</p>
+          </div>
+        </div>
+      </div>
+        }
+</div>
+
+<br/>
+        <h5 style="margin-top: 50px; margin-bottom: 110px; text-align:center ">If there is anything else you need. Don't be afraid
+            to go on to our ContactUs Page and get in touch.
+        </h5>
+</body>
+<footer>
+
+</footer>
+</html>

@@ -1,0 +1,70 @@
+﻿@page
+@model christmasinbelfast.Pages.ContactUsModel
+
+
+<html>
+    <header>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="~/css/MyStyleSheet.css" />
+@*        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"*@
+        <script src="https://kit.fontawesome.com/e642334fa4.js" crossorigin="anonymous"></script>    
+    </header>
+    <body>
+        <div style="background-image: url(../images/christmasBannerForNavCroppedNow.jpg);
+                    width: 100%">
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Wreaths">Wreaths</a></li>
+                    <li><a asp-page="/ContactUs">Contact Us</a></li>
+                    <li><a asp-page="/Basket">Basket</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <h1 style="text-align: center">Get in touch here</h1>
+            <div class="row" style="padding: 0px 0px 0px 30px;">
+                <div class="border border-info col-5">
+                    <div class="row">
+                        <div class="col-3" style="padding: 30px 0px 0px 50px;">
+                             <i class="fa-solid fa-phone fa-2xl"></i>
+                        </div>
+                        <div class="col-9" style="padding: 30px 0px 0px 10px;">
+                            <p>077234623589</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3" style="padding: 30px 0px 0px 50px;">
+                             <i class="fa-regular fa-envelope fa-2xl"></i>
+                        </div>
+                        <div class="col-9" style="padding: 30px 0px 30px 10px;">
+                            <p>christmasinbelfast@gmail.com</p>
+                        </div>
+                    </div>   
+                    <div class="row">
+                        <div class="col-3" style="padding: 0px 0px 30px 50px;">
+                             <i class="fa-solid fa-location-pin fa-2xl"></i>
+                        </div>
+                        <div class="col-9" style="padding: 0px 0px 0px 10px;">
+                            <p>1 High Street</p>
+                            <p>Belfast</p>
+                            <p>BT1 1AA</p>
+                        </div>
+                    </div>    
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fa-brands fa-facebook fa-lg"></i>
+                            <i class="fa-brands fa-instagram fa-lg"></i>
+                        </div>
+                        <div class="col-10">
+                        </div>
+                    </div>                        
+                </div>
+                <div class="col-7">
+                    <img src="~/images/index/Santa.jpg" />
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

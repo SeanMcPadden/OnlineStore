@@ -1,0 +1,85 @@
+﻿@page
+@model christmasinbelfast.Pages.BasketModel
+
+<html>
+    <header>
+        <link rel="stylesheet" href="~/css/MyStyleSheet.css" />
+    </header>
+    <body>
+        <div style="background-image: url(../images/christmasBannerForNavCroppedNow.jpg);
+                    width: 100%">
+            <nav>
+                <ul>
+                    <li><a asp-page="/wreaths">Wreaths</a></li>
+                    <li><a asp-page="/centerpiece">Centerpieces</a></li>
+                    <li><a asp-page="/ContactUs">Contact Us</a></li>
+                    <li><a asp-page="/Index">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br/>
+        <h2 style="text-align: center; margin-bottom: 20px; ">Hope your looking forward to Christmas as much as we are</h2>
+        <section class="container-for-desktop">
+            <div class="row d-flex justify-content-center col-12">
+                <div class="col-4">
+                    <img src="~/images/frontDoorImageforBasketPage.jpg" width="100%" />
+                </div>
+                <div class="col-4 border border-info rounded m-20">
+                    <form id="account" method="post" class="py-5">
+                        <div class="d-flex justify-content-center">
+                            <h1 class="h3 mb-3 font-weight-normal">Your Basket</h1>
+                        </div>
+                        <div>
+                    <div class="row">
+                        <div class="col-2">
+                            <b>QTY</b>
+                        </div>
+                        <div class="col-4">
+                            <b>Product</b>
+                        </div>
+                        <div class="col-6">
+                          <b>Price(Per Item)</b>
+                        </div>
+                    </div>
+                    <br/>
+@if(@Model.SortedList != null)
+                        {
+                            @foreach(var purchase in @Model.SortedList)
+                            {
+                                var findingProductName = @Model.
+                                PublicListOfProducts.Find(x => x.Id == purchase.ProductId);
+
+                                <div class="row">
+                                    <div class="col-2">X @purchase.Quantity</div>
+                                    <div class="col-4">@findingProductName.ProductName</div>
+                                    <div class="col-6">£@findingProductName.Price</div>
+                                </div>
+                                <br/>
+                            }                            
+                        }
+
+                        @if(Model.TotalAmount > 0)
+                        {
+                            <p>Total : £@Model.TotalAmount</p>                            
+                        }
+                        else
+                        {
+                            <p>Your Basket is empty.</p>
+                        }
+
+                    </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-lg btn-success btn-block">Go To Checkout</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <img src="~/images/frontDoorBasketPage.jpg" width="100%" />
+                </div>
+            </div>
+        </section>
+        <h5 style="margin-top: 50px; margin-bottom: 110px; text-align:center ">If there is anything else you need. Don't be afraid
+            to go on to our ContactUs Page and get in touch.
+        </h5>
+    </body>
+</html>

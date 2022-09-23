@@ -1,0 +1,53 @@
+﻿@page
+@model christmasinbelfast.Pages.SuccessModel
+
+<html>
+    <header>
+        <link rel="stylesheet" href="~/css/MyStyleSheet.css" />
+    </header>
+    <body>
+        <div style="background-image: url(../images/christmasBannerForNavCroppedNow.jpg);
+                    width: 100%">
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/wreaths">Wreaths</a></li>
+                    <li><a asp-page="/centerpiece">Centerpieces</a></li>
+                    <li><a asp-page="/ContactUs">Contact Us</a></li>
+                    <li><a asp-page="/Basket">Basket</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>-</p>
+            </div>
+            <div class="col-6">
+                <p>-</p>
+            </div>
+        </div>
+@*        <div class="row">
+            <div class="col-6">
+                <h1>Trying for half</h1>
+                    <h2>Payment Complete</h2>
+                    <b>Thank you for your order.</b>
+                    <p>Have a very merry christmas and a happy new year.</p>
+            </div>
+            <div class="col-6">
+                <h1>Trying for the other half</h1>
+                <img src="/images/index/Santa.jpg" width="100%" />
+            </div>
+        </div>*@
+
+        <div class="row">
+            <div class="col-4">
+                <h2 style="padding: 0px 0px 50px 20px;">Payment Complete</h2>
+                <b style="padding: 50px 0px 0px 20px;">Thank you for your order.</b>
+                <p style="padding: 30px 0px 0px 20px;">Have a very merry christmas and a happy new year.</p>
+            </div>
+            <div class="col-8">
+                <img src="/images/index/Santa.jpg" width="100%" style="padding: 0px 0px 50px 0px;" />
+            </div>
+        </div>
+    </body>
+</html>

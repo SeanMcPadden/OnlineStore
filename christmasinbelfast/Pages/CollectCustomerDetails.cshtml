@@ -1,0 +1,79 @@
+﻿@page
+@model christmasinbelfast.Pages.CollecttCustomerDetailsModel
+
+<html>
+    <header>
+        <link rel="stylesheet" href="~/css/MyStyleSheet.css" />
+    </header>
+    <body>
+        <div style="background-image: url(../images/christmasBannerForNavCroppedNow.jpg);
+                    width: 100%">
+            <nav>
+                <ul>
+                    <li><a asp-page="/Basket">Basket</a></li>
+                    <li><a asp-page="/wreaths">Wreaths</a></li>
+                    <li><a asp-page="/centerpiece">Centerpieces</a></li>
+                    <li><a asp-page="/ContactUs">Contact Us</a></li>
+                    <li><a asp-page="/Index">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br/>
+        <h2 style="text-align: center; margin-bottom: 20px; ">Customer details</h2>
+        <section class="container-for-desktop">
+            <div class="row d-flex justify-content-center col-12">
+                <div style="padding: 0px 0px 0px 10px" class="col-6 border border-info rounded m-20">
+                    <form id="account" method="post" class="py-5">
+                        <div class="d-flex justify-content-center" style="padding: 0px 0px 30px 0px;">
+                            <h1 class="h3 mb-3 font-weight-normal">Customer Details</h1>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">First Name</label>
+                            <input name="FirstName" id="FirstName" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">Last Name</label>
+                            <input name="LastName" id="LastName" required minlength="1" maxlength="14"/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">Email Address</label>
+                            <input name="EmailAddress" type="email" id="EmailAddress" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">Tel Number</label>
+                            <input name="TelephoneNumber" type="tel" id="TelephoneNumber" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                             <B>Shipping Address</B>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: +0px 0px 0px 0px;">House Number</label>
+                            <input name="HouseNumber" id="HouseNumber" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">Street Name</label>
+                            <input name="StreetName" id="StreetName" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">Town/City</label>
+                            <input name="City" id="City" required/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <label class="col-3" style="Padding: 0px 20px 0px 0px;">PostCode</label>
+                            <input name="PostCode" id="PostCode" required pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}"/>
+                        </div>
+                        <div class="row d-flex" style="padding: 0px 0px 15px 40px;">
+                            <button class="btn btn-success" type="submit">Procceed to pay</button>
+                        </div>                        
+                    </form>
+                </div>
+                <div class="col-6">
+                    <img src="~/images/frontDoorBasketPage.jpg" width="100%" />
+                </div>
+            </div>
+        </section>
+        <h5 style="margin-top: 50px; margin-bottom: 110px; text-align:center ">If there is anything else you need. Don't be afraid
+            to go on to our ContactUs Page and get in touch.
+        </h5>
+    </body>
+</html>
